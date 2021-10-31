@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing:border-box;
+}
+:root{
+    --background : #23283d;
+    --border : #fff;
+    --purple : #9146ff;
+}
+
+body{
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container{
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+/* button styling begins */
+.btn{
+    position: relative;
+    width: 5em;
+    height: 2.5em;
+    font-size: 2em;
+    overflow: hidden;
+    border: none;
+    background: none;
+    border: 3px solid var(--border);
+    box-shadow: 20px 20px 80px var(--border);
+}
+
+.text{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    color: var(--border);
+}
+
+/* Left */
+.btn-left::after{
+    content: '';
+    height: 100%;
+    width: 0;
+    position: absolute;
+    background: var(--purple);
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+}
+.btn-left:hover::after{
+    width: 100%;
+}
+
+/* Center */
+
+.btn-center::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: var(--purple);
+    left: 0;
+    bottom: 0;
+    transition: 0.4s;
+    transform: scale(0,1);
+}
+.btn-center:hover::after{
+    transform: scale(1,1);
+    
+}
+
+/* Right */
+
+.btn-right::after{
+    content: '';
+    height: 100%;
+    width: 0;
+    position: absolute;
+    background: var(--purple);
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+.btn-right:hover::after{
+    width: 100%;
+}
